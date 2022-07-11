@@ -11,6 +11,7 @@ class ImageViewViewModel: ObservableObject {
     
     @Published var image: Image?
     @Published var networkState: NetworkState = .loading
+    @Published var isShowingSavedMassage = false
     
     init() { fetchImage() }
     
@@ -22,6 +23,17 @@ class ImageViewViewModel: ObservableObject {
                 }
                 self.networkState = networkState
             }
+        }
+    }
+    
+    func dowloadNewImage() {
+        fetchImage()
+    }
+    
+    func showSaveMassage() {
+        isShowingSavedMassage = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.isShowingSavedMassage = false
         }
     }
     

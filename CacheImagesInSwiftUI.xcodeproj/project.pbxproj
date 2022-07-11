@@ -17,6 +17,8 @@
 		0EBFAC63287C793600D8DFCF /* ImageViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBFAC62287C793600D8DFCF /* ImageViewViewModel.swift */; };
 		0EBFAC68287C7A4300D8DFCF /* DowloadedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBFAC67287C7A4300D8DFCF /* DowloadedImageView.swift */; };
 		0EBFAC6A287C7C1000D8DFCF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBFAC69287C7C1000D8DFCF /* CustomButton.swift */; };
+		0EBFAC6D287C83DE00D8DFCF /* SaveMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBFAC6C287C83DE00D8DFCF /* SaveMessageView.swift */; };
+		0EBFAC6F287C844200D8DFCF /* NoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBFAC6E287C844200D8DFCF /* NoImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		0EBFAC62287C793600D8DFCF /* ImageViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewViewModel.swift; sourceTree = "<group>"; };
 		0EBFAC67287C7A4300D8DFCF /* DowloadedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DowloadedImageView.swift; sourceTree = "<group>"; };
 		0EBFAC69287C7C1000D8DFCF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		0EBFAC6C287C83DE00D8DFCF /* SaveMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveMessageView.swift; sourceTree = "<group>"; };
+		0EBFAC6E287C844200D8DFCF /* NoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +115,10 @@
 		0EBFAC6B287C7C3600D8DFCF /* Componets */ = {
 			isa = PBXGroup;
 			children = (
+				0EBFAC6E287C844200D8DFCF /* NoImageView.swift */,
 				0EBFAC67287C7A4300D8DFCF /* DowloadedImageView.swift */,
 				0EBFAC69287C7C1000D8DFCF /* CustomButton.swift */,
+				0EBFAC6C287C83DE00D8DFCF /* SaveMessageView.swift */,
 			);
 			name = Componets;
 			path = Views;
@@ -195,7 +201,9 @@
 				0EBFAC6A287C7C1000D8DFCF /* CustomButton.swift in Sources */,
 				0E4A1903287C5CBB007C2F98 /* CacheImagesInSwiftUIApp.swift in Sources */,
 				0EBFAC63287C793600D8DFCF /* ImageViewViewModel.swift in Sources */,
+				0EBFAC6F287C844200D8DFCF /* NoImageView.swift in Sources */,
 				0EBFAC68287C7A4300D8DFCF /* DowloadedImageView.swift in Sources */,
+				0EBFAC6D287C83DE00D8DFCF /* SaveMessageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +342,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -364,7 +372,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
