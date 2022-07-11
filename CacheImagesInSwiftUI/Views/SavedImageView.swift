@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  SavedImageView.swift
 //  CacheImagesInSwiftUI
 //
 //  Created by Ульяна Гритчина on 11.07.2022.
@@ -7,15 +7,14 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct SavedImageView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Text("Hello, World!")
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct SavedImageView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SavedImageView()
     }
 }
