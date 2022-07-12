@@ -10,12 +10,12 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView {
-            ImageView()
+            CacheInSwiftUIView()
                 .tabItem {
                     Label("Image", systemImage: "photo")
                 }
             
-            SavedImageView()
+            SavedView()
                 .tabItem {
                     Label("Saved", systemImage: "photo.fill.on.rectangle.fill")
                 }

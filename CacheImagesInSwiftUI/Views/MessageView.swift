@@ -7,17 +7,18 @@
 
 import SwiftUI
 
-struct SaveMessageView: View {
+struct MessageView: View {
+    let text: String
     let isShowingMassage: Bool
     var body: some View {
         Rectangle()
-            .opacity(0.5)
+            .opacity(0)
             .background(.ultraThinMaterial)
-            .frame(width: UIScreen.main.bounds.width / 2,
-                   height: UIScreen.main.bounds.width / 2)
+            .frame(width: 200,
+                   height: 200)
             .cornerRadius(10)
             .overlay(
-                Text("Saved")
+                Text(text)
                     .bold()
                     .foregroundColor(.white)
                     .font(.system(size: UIScreen.main.bounds.height / 30))
@@ -27,8 +28,8 @@ struct SaveMessageView: View {
     }
 }
 
-struct SaveMassageView_Previews: PreviewProvider {
+struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-        SaveMessageView(isShowingMassage: true)
+        MessageView(text: "text", isShowingMassage: true)
     }
 }

@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-class ImageViewViewModel: ObservableObject {
+class CacheInSwftUIViewModel: ObservableObject {
     
-    @Published var image: Image?
+    @Published var image: UIImage?
     @Published var networkState: NetworkState = .loading
     @Published var isShowingSavedMassage = false
     
@@ -19,7 +19,7 @@ class ImageViewViewModel: ObservableObject {
         NetworkManager.shared.downloadImage(from: "https://picsum.photos/200") { image, networkState in
             DispatchQueue.main.async {
                 if let image = image {
-                    self.image = Image(uiImage: image)
+                    self.image = image
                 }
                 self.networkState = networkState
             }
@@ -30,11 +30,21 @@ class ImageViewViewModel: ObservableObject {
         fetchImage()
     }
     
-    func showSaveMassage() {
+    func saveImage() {
+        saveToCache()
+        showSaveMassage()
+    }
+    
+    private func showSaveMassage() {
         isShowingSavedMassage = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.isShowingSavedMassage = false
         }
+    }
+    
+    private func saveToCache() {
+        guard let image = image else { return }
+        CahceManager.instance.add(image: image, name: "saved")
     }
     
 }

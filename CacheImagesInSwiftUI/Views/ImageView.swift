@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct DowloadedImageView: View {
-    let image: Image?
+struct ImageView: View {
+    let image: UIImage?
     var body: some View {
         if let image = image {
-            image
+            Image(uiImage: image)
                 .cornerRadius(10)
                 .shadow(color: .black.opacity(0.5), radius: 10, x: 5, y: 5)
         }
     }
 }
 
-struct DowloadedImageView_Previews: PreviewProvider {
+struct ImageView_Previews: PreviewProvider {
     static var previews: some View {
-        DowloadedImageView(image: Image(systemName: "heart"))
+        ImageView(image: UIImage(systemName: "heart"))
     }
 }

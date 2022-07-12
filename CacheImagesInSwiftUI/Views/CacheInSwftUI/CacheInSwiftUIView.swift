@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ImageView: View {
-    @StateObject private var vm = ImageViewViewModel()
+struct CacheInSwiftUIView: View {
+    @StateObject private var vm = CacheInSwftUIViewModel()
     var body: some View {
         NavigationView {
             ZStack {
@@ -18,8 +18,9 @@ struct ImageView: View {
                     
                     switch vm.networkState {
                     case .loaded: ZStack {
-                        DowloadedImageView(image: vm.image)
-                        SaveMessageView(isShowingMassage: vm.isShowingSavedMassage)
+                        ImageView(image: vm.image)
+                        MessageView(text: "Saved",
+                                    isShowingMassage: vm.isShowingSavedMassage)
                     }
                     case .loadingError: NoImageView()
                     case .loading: ProgressView()
@@ -34,7 +35,7 @@ struct ImageView: View {
                         
                         CustomButton(tile: "Save",
                                      color: .blue,
-                                     action: vm.showSaveMassage)
+                                     action: vm.saveImage)
                     }
                     
                 }
@@ -47,7 +48,7 @@ struct ImageView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageView()
+        CacheInSwiftUIView()
     }
 }
 

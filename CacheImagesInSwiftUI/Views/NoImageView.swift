@@ -12,10 +12,13 @@ struct NoImageView: View {
         Text("?")
             .foregroundColor(.white)
             .bold()
-            .font(.system(size: UIScreen.main.bounds.height / 7))
-            .frame(width:UIScreen.main.bounds.width - 80,
-                   height: UIScreen.main.bounds.height / 3)
-            .background(Color.black.cornerRadius(20))
+            .font(.system(size: UIScreen.main.bounds.height / 8))
+            .frame(width: 200,
+                   height: 200)
+            .background(
+                LinearGradient(colors: [.black,.black.opacity(0.8)], startPoint: .bottom, endPoint: .top)
+                    .cornerRadius(10)
+            )
     }
 }
 
