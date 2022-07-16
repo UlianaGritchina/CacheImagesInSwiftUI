@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject private var vm = CacheInSwftUIViewModel()
+    @StateObject private var vm = MainViewViewModel()
     var body: some View {
         NavigationView {
             VStack {
@@ -32,7 +32,7 @@ struct MainView: View {
                     
                     CustomButton(title: "Save",
                                  color: .blue,
-                                 action: vm.saveImage)
+                                 action: {vm.saveImageTo(.nsCache)})
                 }
                 .padding()
                 

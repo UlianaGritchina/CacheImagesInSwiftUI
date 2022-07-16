@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class CacheInSwftUIViewModel: ObservableObject {
+class MainViewViewModel: ObservableObject {
     
     @Published var image: UIImage?
     @Published var networkState: NetworkState = .loading
@@ -31,11 +31,6 @@ class CacheInSwftUIViewModel: ObservableObject {
         fetchImage()
     }
     
-    func saveImage() {
-        saveToCache()
-        showSaveMassage()
-    }
-    
     func showSettingsView() {
         isShowingSettingsView.toggle()
     }
@@ -47,9 +42,23 @@ class CacheInSwftUIViewModel: ObservableObject {
         }
     }
     
+    func saveImageTo(_ tapy: AppTapy) {
+        switch tapy {
+        case .nsCache: saveToCache()
+        case .fileManager: saveToFileManager()
+        }
+        showSaveMassage()
+    }
+    
     private func saveToCache() {
         guard let image = image else { return }
         CahceManager.instance.add(image: image, name: "saved")
+    }
+    
+    private func saveToFileManager() {
+        guard let image = image else { return }
+        PhotoFileManager.instanse.add(key: "saved", image: image)
+        
     }
     
 }

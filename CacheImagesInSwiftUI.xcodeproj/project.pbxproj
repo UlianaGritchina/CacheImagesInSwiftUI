@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E3944032882F8DB00C7C5AD /* PhotoFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3944022882F8DB00C7C5AD /* PhotoFileManager.swift */; };
 		0E4A1903287C5CBB007C2F98 /* CacheImagesInSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A1902287C5CBB007C2F98 /* CacheImagesInSwiftUIApp.swift */; };
 		0E4A1905287C5CBB007C2F98 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A1904287C5CBB007C2F98 /* MainView.swift */; };
 		0E4A1907287C5CC0007C2F98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E4A1906287C5CC0007C2F98 /* Assets.xcassets */; };
@@ -14,7 +15,7 @@
 		0E4A1911287C5E43007C2F98 /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A1910287C5E43007C2F98 /* SavedView.swift */; };
 		0E4A1913287C5E53007C2F98 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A1912287C5E53007C2F98 /* TabBarView.swift */; };
 		0E4A1916287C6E0E007C2F98 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A1915287C6E0E007C2F98 /* NetworkManager.swift */; };
-		0EBFAC63287C793600D8DFCF /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBFAC62287C793600D8DFCF /* MainViewModel.swift */; };
+		0EBFAC63287C793600D8DFCF /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBFAC62287C793600D8DFCF /* MainViewViewModel.swift */; };
 		0EBFAC68287C7A4300D8DFCF /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBFAC67287C7A4300D8DFCF /* ImageView.swift */; };
 		0EBFAC6A287C7C1000D8DFCF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBFAC69287C7C1000D8DFCF /* CustomButton.swift */; };
 		0EBFAC6D287C83DE00D8DFCF /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBFAC6C287C83DE00D8DFCF /* MessageView.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E3944022882F8DB00C7C5AD /* PhotoFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFileManager.swift; sourceTree = "<group>"; };
 		0E4A18FF287C5CBB007C2F98 /* CacheImagesInSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CacheImagesInSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4A1902287C5CBB007C2F98 /* CacheImagesInSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImagesInSwiftUIApp.swift; sourceTree = "<group>"; };
 		0E4A1904287C5CBB007C2F98 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -34,7 +36,7 @@
 		0E4A1910287C5E43007C2F98 /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
 		0E4A1912287C5E53007C2F98 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		0E4A1915287C6E0E007C2F98 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		0EBFAC62287C793600D8DFCF /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		0EBFAC62287C793600D8DFCF /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
 		0EBFAC67287C7A4300D8DFCF /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		0EBFAC69287C7C1000D8DFCF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		0EBFAC6C287C83DE00D8DFCF /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
@@ -78,7 +80,7 @@
 				0EDDED9928829ED500B17891 /* More */,
 				0E4A1914287C5F25007C2F98 /* Views */,
 				0EBFAC6B287C7C3600D8DFCF /* Componets */,
-				0EBFAC61287C781400D8DFCF /* Servises */,
+				0EBFAC61287C781400D8DFCF /* Managers */,
 			);
 			path = CacheImagesInSwiftUI;
 			sourceTree = "<group>";
@@ -102,19 +104,20 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		0EBFAC61287C781400D8DFCF /* Servises */ = {
+		0EBFAC61287C781400D8DFCF /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				0E4A1915287C6E0E007C2F98 /* NetworkManager.swift */,
 				0EFC85C6287D8469005A43C5 /* CacheManager.swift */,
+				0E3944022882F8DB00C7C5AD /* PhotoFileManager.swift */,
 			);
-			path = Servises;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		0EBFAC64287C795800D8DFCF /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				0EBFAC62287C793600D8DFCF /* MainViewModel.swift */,
+				0EBFAC62287C793600D8DFCF /* MainViewViewModel.swift */,
 				0E4A1904287C5CBB007C2F98 /* MainView.swift */,
 			);
 			path = Main;
@@ -123,10 +126,10 @@
 		0EBFAC6B287C7C3600D8DFCF /* Componets */ = {
 			isa = PBXGroup;
 			children = (
-				0EBFAC6E287C844200D8DFCF /* NoImageView.swift */,
-				0EBFAC67287C7A4300D8DFCF /* ImageView.swift */,
 				0EBFAC69287C7C1000D8DFCF /* CustomButton.swift */,
 				0EBFAC6C287C83DE00D8DFCF /* MessageView.swift */,
+				0EBFAC6E287C844200D8DFCF /* NoImageView.swift */,
+				0EBFAC67287C7A4300D8DFCF /* ImageView.swift */,
 			);
 			name = Componets;
 			path = Views;
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3944032882F8DB00C7C5AD /* PhotoFileManager.swift in Sources */,
 				0E4A1911287C5E43007C2F98 /* SavedView.swift in Sources */,
 				0EDDED9728829E4000B17891 /* SavedViewViewModel.swift in Sources */,
 				0E4A1905287C5CBB007C2F98 /* MainView.swift in Sources */,
@@ -246,7 +250,7 @@
 				0EBFAC6A287C7C1000D8DFCF /* CustomButton.swift in Sources */,
 				0E4A1903287C5CBB007C2F98 /* CacheImagesInSwiftUIApp.swift in Sources */,
 				0EFC85C7287D8469005A43C5 /* CacheManager.swift in Sources */,
-				0EBFAC63287C793600D8DFCF /* MainViewModel.swift in Sources */,
+				0EBFAC63287C793600D8DFCF /* MainViewViewModel.swift in Sources */,
 				0EBFAC6F287C844200D8DFCF /* NoImageView.swift in Sources */,
 				0EBFAC68287C7A4300D8DFCF /* ImageView.swift in Sources */,
 				0EBFAC6D287C83DE00D8DFCF /* MessageView.swift in Sources */,
