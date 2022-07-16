@@ -10,11 +10,16 @@ import SwiftUI
 class MainViewViewModel: ObservableObject {
     
     @Published var image: UIImage?
+    @Published var appTapy: AppTapy = UserDefaultsManager.instanse.getAppTapy()
     @Published var networkState: NetworkState = .loading
     @Published var isShowingSavedMassage = false
+    @Published var title = ""
     @Published var isShowingSettingsView = false
     
-    init() { fetchImage() }
+    init() {
+        title = appTapy.rawValue
+        fetchImage()
+    }
     
     func fetchImage() {
         NetworkManager.shared.downloadImage(from: "https://picsum.photos/200") { image, networkState in
@@ -42,8 +47,8 @@ class MainViewViewModel: ObservableObject {
         }
     }
     
-    func saveImageTo(_ tapy: AppTapy) {
-        switch tapy {
+    func saveImage() {
+        switch appTapy {
         case .nsCache: saveToCache()
         case .fileManager: saveToFileManager()
         }

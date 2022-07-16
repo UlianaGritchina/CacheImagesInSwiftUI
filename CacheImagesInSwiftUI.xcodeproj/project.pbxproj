@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E3944032882F8DB00C7C5AD /* PhotoFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3944022882F8DB00C7C5AD /* PhotoFileManager.swift */; };
+		0E394405288304E000C7C5AD /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E394404288304E000C7C5AD /* UserDefaultsManager.swift */; };
 		0E4A1903287C5CBB007C2F98 /* CacheImagesInSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A1902287C5CBB007C2F98 /* CacheImagesInSwiftUIApp.swift */; };
 		0E4A1905287C5CBB007C2F98 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A1904287C5CBB007C2F98 /* MainView.swift */; };
 		0E4A1907287C5CC0007C2F98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E4A1906287C5CC0007C2F98 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		0E3944022882F8DB00C7C5AD /* PhotoFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFileManager.swift; sourceTree = "<group>"; };
+		0E394404288304E000C7C5AD /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		0E4A18FF287C5CBB007C2F98 /* CacheImagesInSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CacheImagesInSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4A1902287C5CBB007C2F98 /* CacheImagesInSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheImagesInSwiftUIApp.swift; sourceTree = "<group>"; };
 		0E4A1904287C5CBB007C2F98 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				0E4A1915287C6E0E007C2F98 /* NetworkManager.swift */,
 				0EFC85C6287D8469005A43C5 /* CacheManager.swift */,
 				0E3944022882F8DB00C7C5AD /* PhotoFileManager.swift */,
+				0E394404288304E000C7C5AD /* UserDefaultsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				0E4A1905287C5CBB007C2F98 /* MainView.swift in Sources */,
 				0E4A1916287C6E0E007C2F98 /* NetworkManager.swift in Sources */,
 				0E4A1913287C5E53007C2F98 /* TabBarView.swift in Sources */,
+				0E394405288304E000C7C5AD /* UserDefaultsManager.swift in Sources */,
 				0EBFAC6A287C7C1000D8DFCF /* CustomButton.swift in Sources */,
 				0E4A1903287C5CBB007C2F98 /* CacheImagesInSwiftUIApp.swift in Sources */,
 				0EFC85C7287D8469005A43C5 /* CacheManager.swift in Sources */,

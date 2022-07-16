@@ -32,13 +32,15 @@ struct MainView: View {
                     
                     CustomButton(title: "Save",
                                  color: .blue,
-                                 action: {vm.saveImageTo(.nsCache)})
+                                 action: {vm.saveImage()})
                 }
                 .padding()
                 
             }
-            .navigationTitle("Cache in SwftUI")
-            .sheet(isPresented: $vm.isShowingSettingsView, content: {
+            .navigationTitle(vm.title)
+            .sheet(isPresented: $vm.isShowingSettingsView, onDismiss: {
+                vm.appTapy = UserDefaultsManager.instanse.getAppTapy()
+            }, content: {
                 SettingsView()
             })
             .toolbar {
@@ -46,6 +48,7 @@ struct MainView: View {
                     Image(systemName: "gearshape")
                 }
             }
+            
         }
     }
 }
@@ -55,5 +58,3 @@ struct MainView_Previews: PreviewProvider {
         MainView()
     }
 }
-
-

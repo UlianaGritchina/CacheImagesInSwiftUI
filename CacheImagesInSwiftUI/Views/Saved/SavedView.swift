@@ -30,7 +30,7 @@ struct SavedView: View {
                 
                 CustomButton(title: "Delete",
                              color: .red,
-                             action: {vm.deleteImageFrom(.nsCache)},
+                             action: {vm.deleteImage()},
                              width: UIScreen.main.bounds.width - 80)
                     .padding()
                 
@@ -38,7 +38,8 @@ struct SavedView: View {
             .navigationTitle("Saved")
         }
         .onAppear {
-            vm.fetchImageFrom(.nsCache)
+            vm.setAppTapy()
+            vm.fetchImage()
         }
     }
 }

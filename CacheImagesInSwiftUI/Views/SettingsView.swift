@@ -14,20 +14,24 @@ struct SettingsView: View {
         NavigationView {
             VStack {
                 Spacer()
-                
                 CustomButton(title: "NSCache",
                              color: vm.tapy == .nsCache ? .blue : .gray,
-                             action: {vm.choseNSCache()})
+                             action: {vm.chouse(.nsCache)})
                 
                 CustomButton(title: "File Manager",
                              color: vm.tapy == .fileManager ? .blue : .gray,
-                             action: {vm.choseFileManager()})
+                             action: {vm.chouse(.fileManager)})
                 Spacer()
+                CustomButton(
+                    title: "Confitm",
+                    color: .green,
+                    action: {
+                        vm.setTapy()
+                        dismiss()
+                    },
+                    width: UIScreen.main.bounds.width - 80)
+                    .padding()
                 
-                CustomButton(title: "Сonfirm",
-                             color: .purple,
-                             action: { dismiss() },
-                             width: UIScreen.main.bounds.width - 80)
             }
             .navigationTitle("Settings")
             .toolbar { Button("Cancel", action: { dismiss()} ) }

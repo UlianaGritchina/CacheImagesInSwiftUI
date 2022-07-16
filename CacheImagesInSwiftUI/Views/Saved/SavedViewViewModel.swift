@@ -10,17 +10,21 @@ import SwiftUI
 class SavedViewViewModel: ObservableObject {
     
     @Published var image: UIImage?
+    @Published var appTapy: AppTapy = UserDefaultsManager.instanse.getAppTapy()
     @Published var isShowigMessages = false
     
-    func fetchImageFrom(_ tapy: AppTapy) {
-        switch tapy {
+    func setAppTapy() {
+        appTapy = UserDefaultsManager.instanse.getAppTapy()
+    }
+    func fetchImage() {
+        switch appTapy {
         case .nsCache: image = CahceManager.instance.get(name: "saved")
         case .fileManager: image = PhotoFileManager.instanse.get(key: "saved")
         }
     }
     
-    func deleteImageFrom(_ tapy: AppTapy) {
-        switch tapy {
+    func deleteImage() {
+        switch appTapy {
         case .nsCache: deleteFromCache()
         case .fileManager: deleteFromFileManager()
         }
