@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct SavedView: View {
-    @State private var image: UIImage? = CahceManager.instance.get(name: "saved")
-    @State private var isShowing = false
+    @StateObject private var vm = SavedViewViewModel()
     var body: some View {
         NavigationView {
             VStack {
@@ -17,41 +16,29 @@ struct SavedView: View {
                 Spacer()
                 
                 ZStack {
-                    if let image = image {
+                    if let image = vm.image {
                         ImageView(image: image)
                     } else {
                         NoImageView()
                     }
                     
                     MessageView(text: "Deleted",
-                                isShowingMassage: isShowing)
+                                isShowingMassage: vm.isShowigMessages)
                 }
                 
                 Spacer()
                 
                 CustomButton(
                     tile: "Delete",
-                    color: .purple,
-                    action: {
-                        
-                        isShowing = true
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            self.isShowing = false
-                        }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            CahceManager.instance.remove(name: "saved")
-                            self.image = CahceManager.instance.get(name: "saved")
-                        }
-                        
-                        
-                    }
+                    color: .red,
+                    action: { vm.delete() }
                 )
                 
             }
             .navigationTitle("Saved")
         }
         .onAppear {
-            image = CahceManager.instance.get(name: "saved")
+            vm.fetchImage()
         }
     }
 }

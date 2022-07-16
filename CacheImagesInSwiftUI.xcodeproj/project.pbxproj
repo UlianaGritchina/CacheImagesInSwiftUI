@@ -19,6 +19,7 @@
 		0EBFAC6A287C7C1000D8DFCF /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBFAC69287C7C1000D8DFCF /* CustomButton.swift */; };
 		0EBFAC6D287C83DE00D8DFCF /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBFAC6C287C83DE00D8DFCF /* MessageView.swift */; };
 		0EBFAC6F287C844200D8DFCF /* NoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBFAC6E287C844200D8DFCF /* NoImageView.swift */; };
+		0EDDED9728829E4000B17891 /* SavedViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EDDED9628829E4000B17891 /* SavedViewViewModel.swift */; };
 		0EFC85C7287D8469005A43C5 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EFC85C6287D8469005A43C5 /* CacheManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		0EBFAC69287C7C1000D8DFCF /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		0EBFAC6C287C83DE00D8DFCF /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		0EBFAC6E287C844200D8DFCF /* NoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoImageView.swift; sourceTree = "<group>"; };
+		0EDDED9628829E4000B17891 /* SavedViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewViewModel.swift; sourceTree = "<group>"; };
 		0EFC85C6287D8469005A43C5 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,12 +71,10 @@
 		0E4A1901287C5CBB007C2F98 /* CacheImagesInSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				0E4A1902287C5CBB007C2F98 /* CacheImagesInSwiftUIApp.swift */,
+				0EDDED9928829ED500B17891 /* More */,
 				0E4A1914287C5F25007C2F98 /* Views */,
 				0EBFAC6B287C7C3600D8DFCF /* Componets */,
 				0EBFAC61287C781400D8DFCF /* Servises */,
-				0E4A1906287C5CC0007C2F98 /* Assets.xcassets */,
-				0E4A1908287C5CC0007C2F98 /* Preview Content */,
 			);
 			path = CacheImagesInSwiftUI;
 			sourceTree = "<group>";
@@ -90,9 +90,9 @@
 		0E4A1914287C5F25007C2F98 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0EDDED9828829EA600B17891 /* TabBar */,
 				0EBFAC64287C795800D8DFCF /* CacheInSwftUI */,
-				0E4A1910287C5E43007C2F98 /* SavedView.swift */,
-				0E4A1912287C5E53007C2F98 /* TabBarView.swift */,
+				0EDDED9528829E2900B17891 /* Saved */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -125,6 +125,33 @@
 			);
 			name = Componets;
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0EDDED9528829E2900B17891 /* Saved */ = {
+			isa = PBXGroup;
+			children = (
+				0EDDED9628829E4000B17891 /* SavedViewViewModel.swift */,
+				0E4A1910287C5E43007C2F98 /* SavedView.swift */,
+			);
+			path = Saved;
+			sourceTree = "<group>";
+		};
+		0EDDED9828829EA600B17891 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0E4A1912287C5E53007C2F98 /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		0EDDED9928829ED500B17891 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				0E4A1906287C5CC0007C2F98 /* Assets.xcassets */,
+				0E4A1908287C5CC0007C2F98 /* Preview Content */,
+				0E4A1902287C5CBB007C2F98 /* CacheImagesInSwiftUIApp.swift */,
+			);
+			path = More;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E4A1911287C5E43007C2F98 /* SavedView.swift in Sources */,
+				0EDDED9728829E4000B17891 /* SavedViewViewModel.swift in Sources */,
 				0E4A1905287C5CBB007C2F98 /* CacheInSwiftUIView.swift in Sources */,
 				0E4A1916287C6E0E007C2F98 /* NetworkManager.swift in Sources */,
 				0E4A1913287C5E53007C2F98 /* TabBarView.swift in Sources */,
@@ -337,7 +365,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CacheImagesInSwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CacheImagesInSwiftUI/More/Preview Content\"";
 				DEVELOPMENT_TEAM = 86SKTK882J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -367,7 +395,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CacheImagesInSwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CacheImagesInSwiftUI/More/Preview Content\"";
 				DEVELOPMENT_TEAM = 86SKTK882J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
