@@ -28,11 +28,11 @@ struct SavedView: View {
                 
                 Spacer()
                 
-                CustomButton(
-                    tile: "Delete",
-                    color: .red,
-                    action: { vm.delete() }
-                )
+                CustomButton(title: "Delete",
+                             color: .red,
+                             action: {vm.delete()},
+                             width: UIScreen.main.bounds.width - 80)
+                    .padding()
                 
             }
             .navigationTitle("Saved")

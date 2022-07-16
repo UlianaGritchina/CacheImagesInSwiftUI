@@ -12,6 +12,7 @@ class CacheInSwftUIViewModel: ObservableObject {
     @Published var image: UIImage?
     @Published var networkState: NetworkState = .loading
     @Published var isShowingSavedMassage = false
+    @Published var isShowingSettingsView = false
     
     init() { fetchImage() }
     
@@ -33,6 +34,10 @@ class CacheInSwftUIViewModel: ObservableObject {
     func saveImage() {
         saveToCache()
         showSaveMassage()
+    }
+    
+    func showSettingsView() {
+        isShowingSettingsView.toggle()
     }
     
     private func showSaveMassage() {

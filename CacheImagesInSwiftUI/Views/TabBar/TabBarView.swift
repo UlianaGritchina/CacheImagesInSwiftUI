@@ -10,9 +10,9 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView {
-            CacheInSwiftUIView()
+            MainView()
                 .tabItem {
-                    Label("Image", systemImage: "photo")
+                    Label("Main", systemImage: "photo")
                 }
             
             SavedView()
