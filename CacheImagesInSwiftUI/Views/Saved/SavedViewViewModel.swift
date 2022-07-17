@@ -9,41 +9,41 @@ import SwiftUI
 
 class SavedViewViewModel: ObservableObject {
     
+    @Published var appType: AppType = .nsCache
     @Published var image: UIImage?
-    @Published var appTapy: AppTapy = UserDefaultsManager.instanse.getAppTapy()
-    @Published var isShowigMessages = false
+    @Published var title = ""
     
-    func setAppTapy() {
-        appTapy = UserDefaultsManager.instanse.getAppTapy()
+    init() {
+        setAppType()
     }
+    
+    func setAppType() {
+        appType = UserDefaultsManager.instance.getAppType()
+        title = "From " + appType.rawValue
+    }
+    
     func fetchImage() {
-        switch appTapy {
-        case .nsCache: image = CahceManager.instance.get(name: "saved")
-        case .fileManager: image = PhotoFileManager.instanse.get(key: "saved")
+        switch appType {
+        case .nsCache: image = CacheManager.instance.get(name: "saved")
+        case .fileManager: image = PhotoFileManager.instance.get(key: "saved")
         }
     }
     
     func deleteImage() {
-        switch appTapy {
+        switch appType {
         case .nsCache: deleteFromCache()
         case .fileManager: deleteFromFileManager()
         }
     }
     
     private func deleteFromCache() {
-        isShowigMessages = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.isShowigMessages = false
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            CahceManager.instance.remove(name: "saved")
-            self.image = CahceManager.instance.get(name: "saved")
-        }
+        CacheManager.instance.remove(name: "saved")
+        fetchImage()
     }
     
     private func deleteFromFileManager() {
-        PhotoFileManager.instanse.delete(key: "saved")
-        image = nil
+        PhotoFileManager.instance.delete(key: "saved")
+        fetchImage()
     }
     
 }

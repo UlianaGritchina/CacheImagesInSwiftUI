@@ -13,8 +13,7 @@ struct NoImageView: View {
             .foregroundColor(.white)
             .bold()
             .font(.system(size: UIScreen.main.bounds.height / 8))
-            .frame(width: 200,
-                   height: 200)
+            .frame(width: 200, height: 200)
             .background(
                 LinearGradient(colors: [.black,.black.opacity(0.8)], startPoint: .bottom, endPoint: .top)
                     .cornerRadius(10)

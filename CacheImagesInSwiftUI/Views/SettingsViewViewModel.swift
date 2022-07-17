@@ -6,22 +6,18 @@
 //
 import Foundation
 
-enum AppTapy: String {
+enum AppType: String {
     case nsCache = "NSCache"
     case fileManager = "File Manager"
 }
 
-class SettngsViewViewModel: ObservableObject {
+class SettingsViewViewModel: ObservableObject {
     
-    @Published var tapy: AppTapy = UserDefaultsManager.instanse.getAppTapy()
+    @Published var type: AppType = UserDefaultsManager.instance.getAppType()
     
-    func chouse(_ tapy: AppTapy) {
-        self.tapy = tapy
-    }
-    
-    func setTapy() {
-        chouse(tapy)
-        UserDefaultsManager.instanse.setAppTapyWith(tapy)
+    func setType(_ type: AppType) {
+        self.type = type
+        UserDefaultsManager.instance.setAppTypeWith(type)
     }
     
 }

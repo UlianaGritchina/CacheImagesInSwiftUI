@@ -10,15 +10,27 @@ import SwiftUI
 class MainViewViewModel: ObservableObject {
     
     @Published var image: UIImage?
-    @Published var appTapy: AppTapy = UserDefaultsManager.instanse.getAppTapy()
+    @Published var appType: AppType = UserDefaultsManager.instance.getAppType()
     @Published var networkState: NetworkState = .loading
     @Published var isShowingSavedMassage = false
     @Published var title = ""
-    @Published var isShowingSettingsView = false
     
     init() {
-        title = appTapy.rawValue
+        setTitle()
         fetchImage()
+    }
+    
+    func setTitle() {
+        title = appType.rawValue
+    }
+    
+    func setAppType() {
+        appType = UserDefaultsManager.instance.getAppType()
+    }
+    
+    func setupView() {
+        setAppType()
+        setTitle()
     }
     
     func fetchImage() {
@@ -32,12 +44,8 @@ class MainViewViewModel: ObservableObject {
         }
     }
     
-    func dowloadNewImage() {
+    func downloadNewImage() {
         fetchImage()
-    }
-    
-    func showSettingsView() {
-        isShowingSettingsView.toggle()
     }
     
     private func showSaveMassage() {
@@ -48,7 +56,7 @@ class MainViewViewModel: ObservableObject {
     }
     
     func saveImage() {
-        switch appTapy {
+        switch appType {
         case .nsCache: saveToCache()
         case .fileManager: saveToFileManager()
         }
@@ -57,12 +65,12 @@ class MainViewViewModel: ObservableObject {
     
     private func saveToCache() {
         guard let image = image else { return }
-        CahceManager.instance.add(image: image, name: "saved")
+        CacheManager.instance.add(image: image, name: "saved")
     }
     
     private func saveToFileManager() {
         guard let image = image else { return }
-        PhotoFileManager.instanse.add(key: "saved", image: image)
+        PhotoFileManager.instance.add(key: "saved", image: image)
         
     }
     

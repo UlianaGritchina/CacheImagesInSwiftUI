@@ -11,7 +11,7 @@ struct CustomButton: View {
     let tile: String
     let color: Color
     let action: () -> ()
-    let width: CGFloat
+    var width: CGFloat
     let height: CGFloat
     
     init(title: String,
@@ -29,6 +29,7 @@ struct CustomButton: View {
         } else {
             self.width = UIScreen.main.bounds.width / 2.5
         }
+        
         if let height = height {
             self.height = height
         } else {
@@ -42,8 +43,7 @@ struct CustomButton: View {
             Text(tile)
                 .foregroundColor(.white)
                 .bold()
-                .frame(width: width,
-                       height: height)
+                .frame(width: width,height: height)
                 .background(
                     RoundedRectangle(cornerRadius: 10)
                         .foregroundColor(color)
@@ -51,6 +51,7 @@ struct CustomButton: View {
         }
         .padding()
     }
+    
 }
 
 struct CustomButton_Previews: PreviewProvider {

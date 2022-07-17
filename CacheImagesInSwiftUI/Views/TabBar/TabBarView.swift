@@ -17,7 +17,12 @@ struct TabBarView: View {
             
             SavedView()
                 .tabItem {
-                    Label("Saved", systemImage: "photo.fill.on.rectangle.fill")
+                    Label("Saved", systemImage: "photo.on.rectangle")
+                }
+            
+            SettingsView()
+                .tabItem {
+                    Label("Settings", systemImage: "gear")
                 }
         }
     }

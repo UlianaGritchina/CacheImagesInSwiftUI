@@ -15,16 +15,7 @@ struct SavedView: View {
                 
                 Spacer()
                 
-                ZStack {
-                    if let image = vm.image {
-                        ImageView(image: image)
-                    } else {
-                        NoImageView()
-                    }
-                    
-                    MessageView(text: "Deleted",
-                                isShowingMassage: vm.isShowigMessages)
-                }
+                content
                 
                 Spacer()
                 
@@ -35,17 +26,32 @@ struct SavedView: View {
                     .padding()
                 
             }
-            .navigationTitle("Saved")
+            .navigationTitle(vm.title)
         }
         .onAppear {
-            vm.setAppTapy()
+            vm.setAppType()
             vm.fetchImage()
         }
     }
+    
 }
 
 struct SavedImageView_Previews: PreviewProvider {
     static var previews: some View {
         SavedView()
     }
+}
+
+extension SavedView {
+    
+    var content: some View {
+        ZStack {
+            if let image = vm.image {
+                ImageView(image: image)
+            } else {
+                NoImageView()
+            }
+        }
+    }
+    
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 class PhotoFileManager {
     
-    static let instanse = PhotoFileManager()
+    static let instance = PhotoFileManager()
     
     let folderName = "downloaded_photos"
     

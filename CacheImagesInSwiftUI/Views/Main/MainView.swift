@@ -13,22 +13,15 @@ struct MainView: View {
         NavigationView {
             VStack {
                 Spacer()
-                switch vm.networkState {
-                case .loaded: ZStack {
-                    ImageView(image: vm.image)
-                    MessageView(text: "Saved",
-                                isShowingMassage: vm.isShowingSavedMassage)
-                }
-                case .loadingError: NoImageView()
-                case .loading: ProgressView()
-                }
+                
+                content
                 
                 Spacer()
                 
                 HStack {
-                    CustomButton(title: "Dowload new",
+                    CustomButton(title: "Download new",
                                  color: .green,
-                                 action: vm.dowloadNewImage)
+                                 action: vm.downloadNewImage)
                     
                     CustomButton(title: "Save",
                                  color: .blue,
@@ -38,15 +31,9 @@ struct MainView: View {
                 
             }
             .navigationTitle(vm.title)
-            .sheet(isPresented: $vm.isShowingSettingsView, onDismiss: {
-                vm.appTapy = UserDefaultsManager.instanse.getAppTapy()
-            }, content: {
-                SettingsView()
-            })
-            .toolbar {
-                Button(action: {vm.showSettingsView()}) {
-                    Image(systemName: "gearshape")
-                }
+            
+            .onAppear {
+                vm.setupView()
             }
             
         }
@@ -57,4 +44,26 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
     }
+}
+
+extension MainView {
+    
+    var content: some View  {
+        VStack {
+            switch vm.networkState {
+            case .loaded: loadedPhoto
+            case .loadingError: NoImageView()
+            case .loading: ProgressView()
+            }
+        }
+    }
+    
+    var loadedPhoto: some View {
+        ZStack {
+            ImageView(image: vm.image)
+            MessageView(text: "Saved",
+                        isShowingMassage: vm.isShowingSavedMassage)
+        }
+    }
+    
 }

@@ -7,26 +7,26 @@
 
 import UIKit
 
-class CahceManager {
+class CacheManager {
     
-    static let instance = CahceManager()
+    static let instance = CacheManager()
     private init() { }
     
-    var imageCahce: NSCache<NSString, UIImage> = {
+    var imageCache: NSCache<NSString, UIImage> = {
         let cache = NSCache<NSString, UIImage>()
         return cache
     }()
     
     func add(image: UIImage, name: String) {
-        imageCahce.setObject(image, forKey: name as NSString)
+        imageCache.setObject(image, forKey: name as NSString)
     }
     
     func remove(name: String) {
-        imageCahce.removeObject(forKey: name as NSString)
+        imageCache.removeObject(forKey: name as NSString)
     }
     
     func get(name: String) -> UIImage? {
-        imageCahce.object(forKey: name as NSString)
+        imageCache.object(forKey: name as NSString)
     }
     
 }

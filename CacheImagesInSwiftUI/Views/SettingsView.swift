@@ -8,33 +8,24 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @StateObject private var vm = SettngsViewViewModel()
+    @StateObject private var vm = SettingsViewViewModel()
     @Environment(\.dismiss) var dismiss
     var body: some View {
         NavigationView {
             VStack {
                 Spacer()
                 CustomButton(title: "NSCache",
-                             color: vm.tapy == .nsCache ? .blue : .gray,
-                             action: {vm.chouse(.nsCache)})
+                             color: vm.type == .nsCache ? .blue : .gray,
+                             action: {vm.setType(.nsCache)})
                 
                 CustomButton(title: "File Manager",
-                             color: vm.tapy == .fileManager ? .blue : .gray,
-                             action: {vm.chouse(.fileManager)})
+                             color: vm.type == .fileManager ? .blue : .gray,
+                             action: {vm.setType(.fileManager)})
                 Spacer()
-                CustomButton(
-                    title: "Confitm",
-                    color: .green,
-                    action: {
-                        vm.setTapy()
-                        dismiss()
-                    },
-                    width: UIScreen.main.bounds.width - 80)
-                    .padding()
+                
                 
             }
             .navigationTitle("Settings")
-            .toolbar { Button("Cancel", action: { dismiss()} ) }
         }
     }
 }
